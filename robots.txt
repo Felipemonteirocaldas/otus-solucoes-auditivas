@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://otussolucoesauditivas.com.br/sitemap.xml

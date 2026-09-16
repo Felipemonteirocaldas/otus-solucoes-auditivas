@@ -1,0 +1,23 @@
+{
+  "name": "otus-solucoes-auditivas",
+  "version": "1.0.0",
+  "description": "Website oficial e landing page premium da OTUS Soluções Auditivas",
+  "main": "index.html",
+  "scripts": {
+    "dev": "serve . -l 3000",
+    "start": "serve .",
+    "build": "echo 'Static build ready'"
+  },
+  "keywords": [
+    "aparelhos-auditivos",
+    "recife",
+    "audiologia",
+    "fonoaudiologia",
+    "otus"
+  ],
+  "author": "OTUS Soluções Auditivas",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
