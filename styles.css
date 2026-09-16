@@ -7,12 +7,12 @@
 
 /* --- CSS Variables & Design Tokens --- */
 :root {
-  /* Brand Palette (Extraído do Perfil Oficial @otussolucoesauditivas) */
-  --color-primary: #7A1C2C;         /* Bordô Nobre */
-  --color-primary-dark: #58121E;    /* Bordô Profundo */
-  --color-primary-light: #9B273A;   /* Bordô Luminoso */
-  --color-primary-soft: rgba(122, 28, 44, 0.08);
-  --color-primary-glow: rgba(122, 28, 44, 0.25);
+  /* Brand Palette (Extraído da Logo Oficial logo-marca-original.png) */
+  --color-primary: #92171B;         /* Vermelho / Bordô Oficial OTUS */
+  --color-primary-dark: #6B0E12;    /* Bordô Profundo */
+  --color-primary-light: #B32025;   /* Bordô Luminoso */
+  --color-primary-soft: rgba(146, 23, 27, 0.08);
+  --color-primary-glow: rgba(146, 23, 27, 0.25);
 
   --color-navy: #142236;            /* Azul Marinho Clínico */
   --color-navy-dark: #0B131F;       /* Slate Profundo */
@@ -327,9 +327,18 @@ button {
 }
 
 .brand-logo img {
-  height: 44px;
+  height: 48px;
   width: auto;
   transition: var(--transition-normal);
+}
+
+.site-header.scrolled .brand-logo img {
+  height: 40px;
+}
+
+.footer-brand img {
+  height: 54px;
+  width: auto;
 }
 
 .nav-links {
