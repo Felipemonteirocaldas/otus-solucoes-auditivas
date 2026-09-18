@@ -178,4 +178,63 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
   window.addEventListener('scroll', highlightNav, { passive: true });
+
+  // ==========================================================================
+  // 7. Hero Acoustic Wave Canvas (Art Direction & Sound Physics)
+  // ==========================================================================
+  const heroCanvas = document.getElementById('heroAcousticWave');
+  if (heroCanvas) {
+    const ctx = heroCanvas.getContext('2d');
+    let width, height;
+    let animationFrameId;
+    let lastTime = 0;
+    let step = 0;
+
+    const resizeCanvas = () => {
+      width = heroCanvas.width = heroCanvas.parentElement.offsetWidth || window.innerWidth;
+      height = heroCanvas.height = heroCanvas.parentElement.offsetHeight || window.innerHeight;
+    };
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas, { passive: true });
+
+    const drawHeroWave = (currentTime) => {
+      if (!lastTime) lastTime = currentTime;
+      const dt = Math.min((currentTime - lastTime) / 1000, 0.1);
+      lastTime = currentTime;
+
+      // Movimento muito sereno, lento e constante independente da taxa de quadros (Hz)
+      step += dt * 14;
+
+      ctx.clearRect(0, 0, width, height);
+
+      const lines = [
+        { color: 'rgba(146, 23, 27, 0.055)', speed: 0.04, amp: 38, freq: 0.002, yOffset: 0.46 },
+        { color: 'rgba(179, 32, 37, 0.045)', speed: 0.05, amp: 28, freq: 0.0026, yOffset: 0.50 },
+        { color: 'rgba(146, 23, 27, 0.035)', speed: 0.03, amp: 44, freq: 0.0016, yOffset: 0.55 },
+        { color: 'rgba(107, 14, 18, 0.030)', speed: 0.045, amp: 22, freq: 0.0032, yOffset: 0.42 }
+      ];
+
+      lines.forEach(line => {
+        ctx.beginPath();
+        ctx.strokeStyle = line.color;
+        ctx.lineWidth = 2.2;
+
+        for (let x = 0; x < width; x += 5) {
+          const y = (height * line.yOffset) +
+                    Math.sin(x * line.freq + step * line.speed) * line.amp +
+                    Math.cos(x * line.freq * 0.6 + step * line.speed * 0.7) * (line.amp * 0.35);
+          if (x === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+        ctx.stroke();
+      });
+
+      animationFrameId = requestAnimationFrame(drawHeroWave);
+    };
+
+    animationFrameId = requestAnimationFrame(drawHeroWave);
+  }
 });
