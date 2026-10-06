@@ -665,23 +665,46 @@ address span { display: block; color: var(--ink); font-weight: 700; margin-botto
   .technology-foot { margin-top: 32px; padding-top: 24px; text-align: left; }
   .technology-foot .button { width: 100%; }
 
-  /* Diferenciais Mobile: Layout Horizontal tipo Card iOS/Android */
+  /* Diferenciais Mobile: Layout Horizontal Elegante (Ícone + Conteúdo) */
   .diff-grid { grid-template-columns: 1fr; gap: 12px; }
   .diff-card {
     display: flex;
     align-items: flex-start;
-    gap: 16px;
-    padding: 20px 18px;
+    gap: 14px;
+    padding: 18px 16px;
     border-radius: 16px;
   }
   .diff-icon-wrap {
     margin-bottom: 0;
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     border-radius: 10px;
+    flex-shrink: 0;
   }
-  .diff-card h3 { font-size: 17px; margin-bottom: 6px; }
-  .diff-card p { font-size: 13.5px; line-height: 1.65; }
+  .diff-icon-wrap .icon {
+    width: 20px;
+    height: 20px;
+  }
+  .diff-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .diff-body h3,
+  .diff-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 4px;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .diff-body p,
+  .diff-card p {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 0;
+  }
 
   /* Depoimentos Mobile */
   .testimonials-grid { gap: 14px; }
@@ -709,36 +732,95 @@ address span { display: block; color: var(--ink); font-weight: 700; margin-botto
   .location-map > a { padding: 16px 18px; flex-direction: column; align-items: flex-start; gap: 6px; }
   .location-copy .button { width: 100%; }
 
-  /* Rodapé Mobile */
-  .site-footer { padding: 48px 0 24px; }
+  /* Rodapé Mobile Otimizado & Compacto */
+  .site-footer { padding: 32px 0 16px; }
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
-    padding-bottom: 32px;
+    gap: 22px;
+    padding-bottom: 22px;
   }
-  .footer-desc { max-width: 100%; }
+  .footer-col-brand .logo img { width: 120px; }
+  .footer-desc {
+    max-width: 100%;
+    font-size: 13px;
+    line-height: 1.55;
+    margin: 8px 0 10px;
+  }
+  .footer-cnpj { font-size: 12px; }
+  .footer-clinic-tag { font-size: 11.5px; }
+
+  .footer-col-title {
+    font-size: 12px;
+    margin-bottom: 10px;
+    letter-spacing: .8px;
+  }
+
   .footer-nav-links {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 12px;
   }
   .footer-nav-links a {
-    min-height: 38px;
-    display: inline-flex;
-    align-items: center;
+    min-height: auto;
+    padding: 3px 0;
+    font-size: 13px;
+    display: block;
   }
+
+  .footer-address {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .footer-route-link {
+    font-size: 12.5px;
+    margin-bottom: 10px;
+  }
+  .footer-schedule {
+    padding-top: 10px;
+    gap: 2px;
+  }
+  .footer-schedule span { font-size: 11.5px; }
+  .footer-schedule strong { font-size: 12.5px; }
+  .footer-schedule-note { font-size: 11px !important; }
+
   .footer-phone-brand {
-    font-size: 17px;
+    font-size: 16px;
+    gap: 8px;
+    margin-bottom: 10px;
   }
+  .footer-phone-brand .icon {
+    width: 18px;
+    height: 18px;
+  }
+  .footer-social-row {
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .social-circle {
+    width: 38px;
+    height: 38px;
+  }
+  .social-circle .icon {
+    width: 18px;
+    height: 18px;
+  }
+  .footer-contact-caption {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
   .footer-bottom {
     padding-right: 0;
-    padding-bottom: 96px; /* ZONA LIVRE MOBILE: Espaço seguro vertical para o botão flutuante */
+    padding-top: 18px;
+    padding-bottom: 68px; /* Espaço seguro compacto para o botão flutuante */
   }
   .footer-bottom-copy {
     flex-direction: column;
     align-items: flex-start;
-    gap: 6px;
-    font-size: 11.5px;
+    gap: 4px;
+    font-size: 11px;
+    line-height: 1.45;
   }
   .footer-divider {
     display: none;
